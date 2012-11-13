@@ -56,3 +56,11 @@ everytimeTest
 onlyInAllTest
 BTest
 
+$ mvn verify -Dtest.exgroup="eu.janinko.test.category.CTests"
+ATest
+AaTest
+AbTest
+ABTest
+ABTest2
+
+

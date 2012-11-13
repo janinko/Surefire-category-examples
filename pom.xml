@@ -8,6 +8,7 @@
 	<description>TestTestCategory</description>
 	<properties>
 		<test.group>eu.janinko.test.category.ATests</test.group>
+		<test.exgroup></test.exgroup>
 	</properties>
 
 	<dependencies>
@@ -34,7 +35,7 @@
 				<configuration>
 					<groups>${test.group}</groups>
 					<dryrun>true</dryrun>
-					<!--excludedGroups>${test.group}</excludedGroups-->
+					<excludedGroups>${test.exgroup}</excludedGroups>
 				</configuration>
 				<executions>
 				  <execution>
@@ -60,7 +61,7 @@
 				<configuration>
 					<groups>${test.group}</groups>
 					<dryrun>true</dryrun>
-					<!--excludedGroups>${test.group}</excludedGroups-->
+					<excludedGroups>${test.exgroup}</excludedGroups>
 					<includes>
 						<include>**/*Test.java</include>
 						<include>**/Test*.java</include>
