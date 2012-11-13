@@ -1,0 +1,58 @@
+Group Hiearchy:
+                              AllTests               StandaloneTests
+                ______________/  |   \_________
+               /                 |             \
+          ATests             BTests          CTests
+      ____/  |  \_____________/                /
+     /       |          |                     /
+ AaTests    AbTests   ABTests                /
+              \_____________________________/
+                             |
+                          AbCTests
+
+
+Tests:
+  *test output*     *groups*
+onlnyInAllTest    AllTests
+ATest             ATests
+BTest             BTests
+CTest             CTests
+ABTest            ABTests
+ABTest2           BTests ATests
+AaTest            AaTests
+AbTest            AbTests
+AbCTest           AbCTests
+standaloneTest    StandaloneTests
+everytimeTest
+
+
+
+Default tests with category: ATests
+$ mvn verify
+ATest
+AaTest
+AbTest
+ABTest
+ABTest2
+AbCTest
+
+$ mvn verify -Dtest.group="eu.janinko.test.category.ATests && eu.janinko.test.category.BTests"
+ABTest
+ABTest2
+
+$ mvn verify -Dtest.group='eu.janinko.test.category.AllTests && !eu.janinko.test.category.CTests'
+onlnyInAllTest
+ATest
+AaTest
+AbTest
+ABTest
+ABTest2
+BTest
+
+$ mvn verify -Dtest.group='eu.janinko.test.category.CTests || !eu.janinko.test.category.ATests'
+CTest
+AbCTest
+everytimeTest
+onlyInAllTest
+BTest
+
