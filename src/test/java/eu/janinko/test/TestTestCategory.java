@@ -4,8 +4,10 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import eu.janinko.test.category.ATests;
+import eu.janinko.test.category.ABTests;
 import eu.janinko.test.category.AaTests;
 import eu.janinko.test.category.AbTests;
+import eu.janinko.test.category.AbCTests;
 import eu.janinko.test.category.AllTests;
 import eu.janinko.test.category.BTests;
 import eu.janinko.test.category.CTests;
@@ -35,6 +37,12 @@ public class TestTestCategory {
 	
 	@Test
 	@Category({BTests.class, ATests.class})
+	public void ABTest2(){
+		System.out.println("ABTest2");
+	}
+	
+	@Test
+	@Category(ABTests.class)
 	public void ABTest(){
 		System.out.println("ABTest");
 	}
@@ -43,6 +51,12 @@ public class TestTestCategory {
 	@Category(CTests.class)
 	public void CTest(){
 		System.out.println("CTest");
+	}
+	
+	@Test
+	@Category(AbCTests.class)
+	public void AbCTest(){
+		System.out.println("AbCTest");
 	}
 	
 	@Test
@@ -57,21 +71,16 @@ public class TestTestCategory {
 		System.out.println("AbTest");
 	}
 
-	/*
 	@Test
 	@Category(StandaloneTests.class)
-	public void standaloneTess(){
+	public void standaloneTest(){
 		System.out.println("standaloneTest");
 	}
-	
-	*/
 	
 	@Test
 	public void everytimeTest(){
 		System.out.println("everytimeTest");
 	}
-	
-	
 	
 	/*
 
